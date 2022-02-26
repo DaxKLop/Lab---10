@@ -11,17 +11,15 @@ void InputStr(char*);
 int menu()
 {
     int ch;
-    do {
-        printf("\n Меню: \n");
-        printf("1. Задание 1:  \n");
-        printf("2. Задание 2:  \n");
-        printf("3. Задание 3:  \n");
-        printf("4. Задание 4:  \n");
-        printf("5. Задание 5:  \n");
-        printf("6. Выход\n");
-        printf("Ваш выбор : ");
-        scanf_s("%d", &ch);
-    } while (ch > 6);
+    printf("\n Меню: \n");
+    printf("1. Задание 1:  \n");
+    printf("2. Задание 2:  \n");
+    printf("3. Задание 3:  \n");
+    printf("4. Задание 4:  \n");
+    printf("5. Задание 5:  \n");
+    printf("6. Выход\n");
+    printf("Ваш выбор : ");
+    scanf_s("%d", &ch);
     return ch;
 }
 
@@ -134,13 +132,14 @@ int main()
     int count = 0, flag = 0;
     printf("Введите 1 строку: ");
     char str1[999];
-    InputStr(str1);
+   
     while (flag == 0)
     {
         switch (menu())
         {
         case 1:
             printf("Задание 1 : заменить все буквы `а` на буквы `б` \n ");
+            InputStr(str1);
             Chek1(str1);
             printf("Задание выполнено");
             flag = 1;
@@ -148,17 +147,21 @@ int main()
 
         case 2:
             printf("Задание 2 : определить, сколько слов заканчиваются на букву `а` \n ");
+            InputStr(str1);
             Chek2(str1, count);
             flag = 1;
             break;
         case 3:
             printf("Задание 3 : проверить строку на палиндромность \n");
+            InputStr(str1);
             Palindrom(str1);
             flag = 1;
             break;
         case 4 :
             printf("Задание 4 : разработать функцию, которая удаляет все лишние пробелы \n");
+            InputStr(str1);
             SpaceDel(str1);
+            flag = 1;
             printf("\n%s", str1);
             break;
         case 5 :
@@ -169,7 +172,6 @@ int main()
             break;
         default:
             printf("Ошибка ввода");
-            flag = 1;
             break;
         }
                 
