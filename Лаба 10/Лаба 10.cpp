@@ -5,7 +5,7 @@
 #include<Windows.h>
 #include <string.h>
 using namespace std;
-void InputStr(char*);
+void inputStr(char*);
 
 
 int menu()
@@ -24,7 +24,7 @@ int menu()
 }
 
 
-void InputStr(char* s)
+void inputStr(char* s)
 {
 
     int i = 0;
@@ -48,7 +48,7 @@ void InputStr(char* s)
     s[i] = '\0';
 
 }
-int Chek1(char* str)
+int swapAToB(char* str)
 {
     int i;
     for (i = 0; i <= strlen(str); i++)
@@ -63,7 +63,7 @@ int Chek1(char* str)
     return 0;
 }
 
-void Chek2(char* str, int k = 0)
+void countWordA(char* str, int k = 0)
 {
     int a = strlen(str);
     for (int i = 0; i <= a; i++)
@@ -73,7 +73,7 @@ void Chek2(char* str, int k = 0)
         }
     cout << "\nКоличество слов оканчивающихся на `а`" << k;
 }
-void Palindrom(char* str)
+void findPalindrom(char* str)
 {
     int i = 0, j, k = 0;
     char str2[101];
@@ -106,7 +106,7 @@ void Palindrom(char* str)
        else cout << "Не палиндром";
  
 }
-void SpaceDel(char* str)
+void removeSpaces(char* str)
 {
     int i = 0, j, k = 0;
     char str2[101];
@@ -139,34 +139,34 @@ int main()
         {
         case 1:
             printf("Задание 1 : заменить все буквы `а` на буквы `б` \n ");
-            InputStr(str1);
-            Chek1(str1);
+            inputStr(str1);
+            swapAToB(str1);
             printf("Задание выполнено");
             flag = 1;
             break;
 
         case 2:
             printf("Задание 2 : определить, сколько слов заканчиваются на букву `а` \n ");
-            InputStr(str1);
-            Chek2(str1, count);
+            inputStr(str1);
+            countWordA(str1, count);
             flag = 1;
             break;
         case 3:
             printf("Задание 3 : проверить строку на палиндромность \n");
-            InputStr(str1);
-            Palindrom(str1);
+            inputStr(str1);
+            findPalindrom(str1);
             flag = 1;
             break;
         case 4 :
             printf("Задание 4 : разработать функцию, которая удаляет все лишние пробелы \n");
-            InputStr(str1);
-            SpaceDel(str1);
+            inputStr(str1);
+            removeSpaces(str1);
             flag = 1;
             printf("\n%s", str1);
             break;
         case 5 :
             printf("Задание 5 :Введите имя \n");
-            InputStr(str1);
+            inputStr(str1);
             printf("\nПривет, %s", str1);
             flag = 1;
             break;
