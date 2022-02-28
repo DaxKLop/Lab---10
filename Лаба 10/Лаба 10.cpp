@@ -31,8 +31,8 @@ void enterOnlyLetterString(char* s)
 	while (1)
 	{
 		s[i] = _getch();
-
-		if (((((int)s[i] >= 65 && (int)s[i] <= 90) || ((int)s[i] >= 97 && (int)s[i] <= 122) || s[i] == ' ')))
+		if (s[i] == 13) break;
+		if (((((int)s[i] >= 65 && (int)s[i] <= 90) || ((int)s[i] >= 97 && (int)s[i] <= 122) || ((int)s[i] <= -1 && (int)s[i] >= -64) || s[i] == ' ')))
 		{
 			cout << s[i];
 			i++;
